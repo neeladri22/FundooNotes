@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
     if (this.loginForm.valid) {
       let payload = {
-        email: this.loginForm.value.username,
+        email: this.loginForm.value.email,
         password: this.loginForm.value.password,
       }
       this.user.login(payload).subscribe((response: any) => {

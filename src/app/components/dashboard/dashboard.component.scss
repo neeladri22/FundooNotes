@@ -20,14 +20,19 @@
     position: relative;
    
   }
-  
+  .menu-icon{
+    width: 35px;
+    height: 15px;
+    border-radius: 10px;
+    display: flex;
+  }
   
   .hov:hover {
     background-color: #d6d1d1;
   }
   
   .icon {
-    left: 10px;
+    left: 30px;
   }
   
   .cap {

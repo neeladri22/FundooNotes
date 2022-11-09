@@ -1,9 +1,15 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar">
-  
-      <button class="hov" mat-icon-button (click)="snav.toggle()">
-        <mat-icon class="menu-icon">menu</mat-icon>
+      <button mat-icon-button   (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      
       </button>
+      <!-- <button class="hov" mat-icon-button (click)="snav.toggle()">  -->
+        <!-- <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button> -->
+         <!-- <img class="menu-icon" src="../../../assets/menu_icon.svg">   -->
+        <!-- <mat-icon class="menu-icon">menu</mat-icon>  -->
+       
+       <!-- </button>  -->
       <div class="icon">
         <img src="../../../assets/keep.png">
       </div>
@@ -41,11 +47,8 @@
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
-        <router-outlet>
-  
-        </router-outlet>
-      </mat-sidenav-content>
-  
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
   
