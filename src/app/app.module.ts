@@ -19,6 +19,7 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { CreateNotesComponent } from './components/create-notes/create-notes.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import { DisplayNoteComponent } from './components/display-note/display-note.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
     DashboardComponent,
     GetAllNotesComponent,
     CreateNotesComponent,
+    DisplayNoteComponent,
     
   ],
   imports: [
