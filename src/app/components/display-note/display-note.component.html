@@ -1,11 +1,12 @@
 <div class="main">
-    <div class="maincontainer">
+    <div class="maincontainer" *ngFor="let notes of childMessage">
         <div class="sub">
-            <img class="pin" height="30px" width="30px" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg"
-                alt="">
-               
+            <div class="sub2">
+            <span class="title1">{{notes.title}}</span>
+            <img height="30px" width="30px" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg" alt="">
         </div>
-
+            <span class="title2">{{notes.description}}</span>
+            
+        </div>   
     </div>
-
-</div>
+    </div>
