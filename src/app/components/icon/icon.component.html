@@ -13,7 +13,7 @@
     <div role="button" class="add" *ngIf="!isTrash">
         <img class="divImg" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
     </div>
-    <div role="button" class="add">
+    <div role="button" class="add" *ngIf="!isArchive && !isTrash" (click)="onArchiev()">
         <img class="divImg" src="../../../assets/archive_black_24dp.svg">
     </div>
     <div role="button" class="add">

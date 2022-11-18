@@ -1,0 +1,16 @@
+<div>
+    <mat-card class="dailogStyles">
+        <h1 mat-dialog-title>
+            <input class="add-note-input" matInput placeholder="Title" [ngModel]="noteTitle" />
+            <img src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="image">
+        </h1>
+        <div mat-dialog-content>
+            <textarea #desc class="add-note-input" matInput placeholder="Take a note...." [(ngModel)]="noteDescription"
+                [(ngModel)]="noteDescription"></textarea>
+        </div>
+        <div style="display: flex;">
+
+            <span><button mat-button mat-dialog-close class="closebutton" (click)="Onclose()">Close</button></span>
+        </div>
+    </mat-card>
+</div>

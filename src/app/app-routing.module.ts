@@ -1,5 +1,6 @@
 import { createComponent, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArchieveComponent } from './components/archieve/archieve.component';
 import { CreateNotesComponent } from './components/create-notes/create-notes.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DisplayNoteComponent } from './components/display-note/display-note.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
          {path: "notes",component:GetAllNotesComponent},
          {path:"displaynote", component:GetAllNotesComponent},
          {path:"icon",component:IconComponent},
-         {path:"trash",component:TrashComponent}
+         {path:"trash",component:TrashComponent},
+         {path:"archieve",component:ArchieveComponent}
  ]}
   
 

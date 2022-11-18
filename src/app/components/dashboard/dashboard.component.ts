@@ -38,6 +38,8 @@ export class DashboardComponent implements OnDestroy  {
 trash() {
   this.router.navigateByUrl('/dashboard/trash')
 }
-
+archieve() {
+  this.router.navigateByUrl('/dashboard/archieve')
+}
 
 }

@@ -23,6 +23,8 @@ import { DisplayNoteComponent } from './components/display-note/display-note.com
 import { IconComponent } from './components/icon/icon.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { TrashComponent } from './components/trash/trash.component';
+import { ArchieveComponent } from './components/archieve/archieve.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { TrashComponent } from './components/trash/trash.component';
     DisplayNoteComponent,
     IconComponent,
     TrashComponent,
+    ArchieveComponent,
+    UpdateNoteComponent,
     
   ],
   imports: [

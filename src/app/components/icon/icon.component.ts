@@ -12,6 +12,7 @@ export class IconComponent implements OnInit {
   @Input() noteCard: any;
   noteID: any;
   isTrash: boolean = false;
+  isArchive: boolean = false;
   ngOnInit(): void {
     console.log(this.noteCard)
   }
@@ -27,6 +28,19 @@ export class IconComponent implements OnInit {
       console.log("Deleted Successfully", response);
 
     })
+  }
+
+  onArchiev() {
+   
+    let reqdata = {
+      noteIdList: [this.noteCard.id], 
+      isArchived: true    
+    }
+    console.log(reqdata);
+    this.note.archivedNotes(reqdata).subscribe((response:any)=>{
+      console.log("Archieve Successfully", response);
+     
+    });
   }
 
 }

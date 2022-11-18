@@ -51,10 +51,19 @@ export class NoteServiceService {
       })
     }
     return this.httpService.postService('/notes/trashNotes',reqdata, true, headerOption)
-    
-
   }
+  archivedNotes(reqdata: any) {
 
+    console.log(this.token)
+  
+    let headerOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':  this.token
+      })
+    }
+    return this.httpService.postService('/notes/archiveNotes',reqdata, true, headerOption)
+  }
 
 
   getAllTrashNotes(){
@@ -66,6 +75,17 @@ export class NoteServiceService {
       })
     } 
     return this.httpService.getservice('/notes/getTrashNotesList',true,header) 
+  }
+
+  getArchieveNotes(){
+    console.log(this.token);
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':this.token
+      })
+    } 
+    return this.httpService.getservice('/notes/getArchiveNotesList',true,header) 
   }
   
 }
