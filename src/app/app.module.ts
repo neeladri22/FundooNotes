@@ -20,6 +20,9 @@ import { CreateNotesComponent } from './components/create-notes/create-notes.com
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { DisplayNoteComponent } from './components/display-note/display-note.component';
+import { IconComponent } from './components/icon/icon.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { TrashComponent } from './components/trash/trash.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,8 @@ import { DisplayNoteComponent } from './components/display-note/display-note.com
     GetAllNotesComponent,
     CreateNotesComponent,
     DisplayNoteComponent,
+    IconComponent,
+    TrashComponent,
     
   ],
   imports: [
@@ -45,7 +50,8 @@ import { DisplayNoteComponent } from './components/display-note/display-note.com
     MatListModule,
     FlexLayoutModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule
     
   ],
   providers: [],

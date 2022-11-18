@@ -1,21 +1,23 @@
 .maincontainer{
     height: auto;
-    width: 45vw;
+    width: 55vw;
+    padding: 2px 10px;
     border: 1px solid gainsboro;
     box-shadow: 5px 5px 5px gainsboro;
     position: relative;
-    left: 220px;
-    top: 20px;
+    left: 300px;
+    top: 30px;
 }
 
 .title{
-    height: 30%;
+    height: 35px;
     width: 100%;
     display: flex;
     border: 0px solid red;
 
 }
 .title1{
+   
     border: 0px solid gray;
     outline: none;
     width: 100%;

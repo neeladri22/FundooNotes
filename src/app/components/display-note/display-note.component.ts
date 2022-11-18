@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./display-note.component.scss']
 })
 export class DisplayNoteComponent implements OnInit {
+  note: any
   @Input() childMessage:any;
   constructor() { }
 

@@ -1,0 +1,43 @@
+<div class="OuterDiv">
+
+    <div role="button" class="add" *ngIf="!isTrash">
+        <img class="divImg" src="../../../assets/remind-me.svg">
+    </div>
+    <div role="button" class="add" *ngIf="!isTrash">
+        <img class="divImg" src="../../../assets/collaborate.svg">
+    </div>
+    <div role="button" class="add" *ngIf="!isTrash" matTooltip="Background color">
+        <img class="divImg" src="../../../assets/palette_black_24dp.svg">
+        
+    </div>
+    <div role="button" class="add" *ngIf="!isTrash">
+        <img class="divImg" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
+    </div>
+    <div role="button" class="add">
+        <img class="divImg" src="../../../assets/archive_black_24dp.svg">
+    </div>
+    <div role="button" class="add">
+
+        <div class ="MoreItem" *ngIf="!isTrash" mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu">
+            <img class="divImg" src="../../../assets/more_vert_black_24dp.svg">
+            <mat-menu #menu="matMenu" >
+                <button mat-menu-item (click)="trash()">Delete note</button>
+                <button mat-menu-item>Add Label</button>
+                <button mat-menu-item>Add Drawing</button>
+                <button mat-menu-item>Make a copy</button>
+                <button mat-menu-item>Show tick boxes</button>
+                <button mat-menu-item>Copy to google Docs</button>
+            </mat-menu>
+        </div>
+    </div>
+    <div *ngIf="isTrash" fxLayout="row" fxLayourAlign="center">
+        <div  matTooltip="Delete forever">
+            <img class="icons" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48 (1).svg" >
+        </div>
+
+        <div class="buttons"  matTooltip="Restore">
+            <img class="icons" src="../../../assets/Restore.png" (click)="trash()">
+        </div>
+
+    </div>
+</div>

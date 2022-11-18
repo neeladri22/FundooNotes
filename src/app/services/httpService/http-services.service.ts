@@ -16,12 +16,14 @@ export class HttpServicesService {
     
     return this.httpclient.get(this.baseUrl + url, token && httpOption)
   }
+  putService( ){
+
+    
+  }
   deleteService() {
 
   }
-  putService() {
-
-  }
+ 
   patchService() {
 
   }

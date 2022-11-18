@@ -39,4 +39,33 @@ export class NoteServiceService {
     } 
     return this.httpService.getservice('/notes/getNotesList',true,header) 
   }
+
+  trashNote(reqdata: any) {
+
+    console.log(this.token)
+  
+    let headerOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':  this.token
+      })
+    }
+    return this.httpService.postService('/notes/trashNotes',reqdata, true, headerOption)
+    
+
+  }
+
+
+
+  getAllTrashNotes(){
+    console.log(this.token);
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':this.token
+      })
+    } 
+    return this.httpService.getservice('/notes/getTrashNotesList',true,header) 
+  }
+  
 }
