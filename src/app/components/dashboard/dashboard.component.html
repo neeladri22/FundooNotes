@@ -1,54 +1,57 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar class="example-toolbar">
-      <button mat-icon-button   (click)="snav.toggle()">
-        <mat-icon>menu</mat-icon>
-      
-      </button>
-      <!-- <button class="hov" mat-icon-button (click)="snav.toggle()">  -->
-        <!-- <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button> -->
-         <!-- <img class="menu-icon" src="../../../assets/menu_icon.svg">   -->
-        <!-- <mat-icon class="menu-icon">menu</mat-icon>  -->
-       
-       <!-- </button>  -->
-      <div class="icon">
-        <img src="../../../assets/keep.png">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+
+    </button>
+    <!-- <button class="hov" mat-icon-button (click)="snav.toggle()">  -->
+    <!-- <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button> -->
+    <!-- <img class="menu-icon" src="../../../assets/menu_icon.svg">   -->
+    <!-- <mat-icon class="menu-icon">menu</mat-icon>  -->
+
+    <!-- </button>  -->
+    <div class="icon">
+      <img src="../../../assets/keep.png">
+    </div>
+    <h1 class="cap">Fundoo Notes</h1>
+
+    <div class="search-box">
+      <img class="search-icon" src="../../../assets/search-icon.svg" alt="">
+      <input matInput placeholder="Search" style="width: 600px;">
+    </div>
+    <div class="right_icons">
+      <img class="refresh" src="../../../assets/refresh.svg" alt="">
+      <img class="listview" src="../../../assets/list-view.svg" alt="">
+      <img class="setting-icon" src="../../../assets/setting-icons.svg" alt="">
+      <img class="app-icon" src="../../../assets/apps-icon.svg" alt="">
+      <!-- <img class="sign-in" src="../../../assets/account-signin.svg" alt=""> -->
+
+    </div>  
+    <div class="right_icons" (click)="Logout()">
+          <img class="sign-in" src="../../../assets/account-signin.svg" alt="">
+  
       </div>
-      <h1 class="cap">Fundoo Notes</h1>
-  
-      <div class="search-box">
-        <img class="search-icon" src="../../../assets/search-icon.svg" alt="" >
-        <input matInput placeholder="Search" style="width: 600px;" >
-      </div>
-      <div class="right_icons">
-        <img class="refresh" src="../../../assets/refresh.svg" alt="">
-        <img class="listview" src="../../../assets/list-view.svg" alt="">
-        <img class="setting-icon" src="../../../assets/setting-icons.svg" alt="">
-        <img class="app-icon" src="../../../assets/apps-icon.svg" alt="">
-        <img class="sign-in" src="../../../assets/account-signin.svg" alt="">
-  
-      </div>
-    </mat-toolbar>
-  
-  
-    <mat-sidenav-container class="sidenav-container">
-      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-      [fixedInViewport]="mobileQuery.matches" fixedTopGap="560">
-        <mat-nav-list class="nav-list">
-          <a mat-list-item>
-            <img src="../../../assets/notes.svg" />Notes</a>
-          <a mat-list-item>
-            <img src="../../../assets/remainder.svg" />Reminder</a>
-          <a mat-list-item>
-            <img src="../../../assets/edit-lable.svg" />Label</a>
-          <a mat-list-item (click)= "archieve()">
-            <img src="../../../assets/archive.svg" />Archive</a>
-          <a mat-list-item (click)="trash()" >
-            <img src="../../../assets/trash.svg" />Trash</a>
-        </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content>
-        <router-outlet></router-outlet>
+  </mat-toolbar>
+
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="560">
+      <mat-nav-list class="nav-list">
+        <a mat-list-item>
+          <img src="../../../assets/notes.svg" />Notes</a>
+        <a mat-list-item>
+          <img src="../../../assets/remainder.svg" />Reminder</a>
+        <a mat-list-item>
+          <img src="../../../assets/edit-lable.svg" />Label</a>
+        <a mat-list-item (click)="archieve()">
+          <img src="../../../assets/archive.svg" />Archive</a>
+        <a mat-list-item (click)="trash()">
+          <img src="../../../assets/trash.svg" />Trash</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-  
+  </mat-sidenav-container>
+</div>

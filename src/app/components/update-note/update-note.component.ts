@@ -13,7 +13,7 @@ export class UpdateNoteComponent implements OnInit {
   ngOnInit(): void {
   }
   Onclose() {
-    
+
   }
 
 

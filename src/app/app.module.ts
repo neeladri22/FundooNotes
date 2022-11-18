@@ -25,6 +25,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { TrashComponent } from './components/trash/trash.component';
 import { ArchieveComponent } from './components/archieve/archieve.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { AuthguardServiceService } from './services/AugthGuardService/authguard-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +60,9 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     MatMenuModule
     
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

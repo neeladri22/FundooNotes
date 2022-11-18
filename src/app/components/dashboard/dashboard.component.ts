@@ -42,4 +42,11 @@ archieve() {
   this.router.navigateByUrl('/dashboard/archieve')
 }
 
+Logout()
+  {
+    localStorage.removeItem('token');
+    this.router.navigateByUrl("/login")
+    console.log("Logout Successfully..!!!");
+  }
+
 }
