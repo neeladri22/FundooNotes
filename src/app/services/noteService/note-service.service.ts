@@ -87,5 +87,17 @@ export class NoteServiceService {
     } 
     return this.httpService.getservice('/notes/getArchiveNotesList',true,header) 
   }
+
+  updateNote(reqdata: any) {
+    console.log(this.token);
+
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService('/notes/updateNotes', reqdata, true, headers)
+  }
   
 }

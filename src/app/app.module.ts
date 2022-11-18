@@ -26,7 +26,7 @@ import { TrashComponent } from './components/trash/trash.component';
 import { ArchieveComponent } from './components/archieve/archieve.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { AuthguardServiceService } from './services/AugthGuardService/authguard-service.service';
-
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +57,8 @@ import { AuthguardServiceService } from './services/AugthGuardService/authguard-
     FlexLayoutModule,
     MatCardModule,
     FormsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
     
   ],
   providers: [
