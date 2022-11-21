@@ -6,10 +6,24 @@
     <div role="button" class="add" *ngIf="!isTrash">
         <img class="divImg" src="../../../assets/collaborate.svg">
     </div>
-    <div role="button" class="add" *ngIf="!isTrash" matTooltip="Background color">
+    <!-- <div role="button" class="add" *ngIf="!isTrash" matTooltip="Background color">
         <img class="divImg" src="../../../assets/palette_black_24dp.svg">
         
+    </div> -->
+    <div role="button" class="add" *ngIf="!isTrash" matTooltip="Background color" [matMenuTriggerFor]="color">
+        <img class="divImg" src="../../../assets/palette_black_24dp.svg">
+        <mat-menu #color="matMenu">
+            <div fxLayout="row wrap" style="padding-left: 8px;">
+                <div *ngFor="let color of colorsArr" class="colorBox">
+                    <button class="colors" mat-icon-button mat-raised-button [style.background]="color?.code"
+                        (click)="setColor(color?.code)"></button> 
+                </div>
+            </div>
+        </mat-menu>
     </div>
+
+
+
     <div role="button" class="add" *ngIf="!isTrash">
         <img class="divImg" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
     </div>

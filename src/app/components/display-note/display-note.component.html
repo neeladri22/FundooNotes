@@ -1,5 +1,5 @@
 <div class="main">
-    <div class="maincontainer" *ngFor="let notes of childMessage">
+    <div class="maincontainer" *ngFor="let notes of childMessage"  [style.background]="notes.color">
         <div class="sub">
             <div class="sub2">
             <span class="title1" (click)="openDialog(notes)">{{notes.title}}</span>
