@@ -41,6 +41,9 @@ trash() {
 archieve() {
   this.router.navigateByUrl('/dashboard/archieve')
 }
+notes() {
+  this.router.navigateByUrl('/dashboard/notes')
+}
 
 Logout()
   {

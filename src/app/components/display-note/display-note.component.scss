@@ -6,8 +6,11 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    
+    padding-top: 50px;
     left: 200px;
+   
+  
+   
 }
 .maincontainer{
     display: flex;
@@ -16,6 +19,8 @@
     border-radius: 8px;
     box-sizing: border-box;
     box-shadow: 0 3px 3px 3px rgb(222, 222, 222);
+    margin-top: 10px;
+   
    
 }
 .sub{
