@@ -1,35 +1,74 @@
-.OuterDiv{
+.OuterDiv {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding:5%;
+    padding: 5%;
 }
 
 
-.add{
+.add {
     padding-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
     border: 10px;
     margin: 0 5px;
-    .material-symbols-outlined{
+
+    .material-symbols-outlined {
         padding: 10px;
     }
-    .divImg{
+
+    .divImg {
         display: flex;
         width: 20px;
         height: 20px;
     }
+
     cursor: pointer;
-    :hover{
+
+    :hover {
         border-radius: 50%;
         background-color: #f1f3f4;
     }
 }
 
 
-.colors{
-    border-radius: 40%;
-    width: 30px;
-    height: 20px;  
+
+
+.colors {
+    display: flex;
+    width: 40px;
+    height: 35px;
+    border: 1px solid rgb(186, 184, 184);
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+
+    :hover {
+        border: 1px solid rgb(186, 184, 184);
+        border-radius: 50%;
+    }
+}
+
+.trash {
+    width: 250px;
+    height: 30px;
+}
+
+.restoreImg {
+    width: 15px;
+    height: 20px;
+    padding-left: 15px;
+    display: inline;
+    cursor: pointer;
+}
+
+.TrashImg {
+    display: inline;
+    position: relative;
+    width: 15px;
+    height: 20px;
+    padding-left: 40px;
+    top: -30px;
+    cursor: pointer;
 }

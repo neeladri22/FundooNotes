@@ -1,5 +1,5 @@
 <div class="main">
-    <div class="maincontainer" *ngFor="let notes of childMessage"  [style.background]="notes.color">
+    <div class="maincontainer" *ngFor="let notes of childMessage | searchFilter:Search"  [style.background]="notes.color">
         <div class="sub">
             <div class="sub2">
             <span class="title1" (click)="openDialog(notes)">{{notes.title}}</span>
@@ -7,7 +7,7 @@
         </div>
             <span class="title2" (click)="openDialog(notes)">{{notes.description}}</span>
             <div class="sub1">
-                <app-icon [noteCard]="notes"></app-icon>
+                <app-icon [noteCard]="notes" (archiveNoteToRefresh)="archive($event)" (trashNoteToRefresh)="trash($event)" (changeColorOfNote)="changeColor($event)" (deleteNoteToRefresh)="delete($event)" (restoreNoteToRefresh)="restore($event)" (unarchieveNoteToRefresh)="unarchive($event)"></app-icon>
             </div>
             
         </div>   

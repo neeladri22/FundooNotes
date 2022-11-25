@@ -27,6 +27,8 @@ import { ArchieveComponent } from './components/archieve/archieve.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { AuthguardServiceService } from './services/AugthGuardService/authguard-service.service';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SearchFilterPipe } from './Pipes/search-filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     TrashComponent,
     ArchieveComponent,
     UpdateNoteComponent,
+    SearchFilterPipe
     
   ],
   imports: [
@@ -58,7 +61,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatCardModule,
     FormsModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    
     
   ],
   providers: [

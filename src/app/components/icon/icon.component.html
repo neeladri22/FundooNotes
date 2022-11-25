@@ -1,4 +1,4 @@
-<div class="OuterDiv">
+<div class="OuterDiv" *ngIf="this.noteCard.isDeleted==false">
 
     <div role="button" class="add" *ngIf="!isTrash">
         <img class="divImg" src="../../../assets/remind-me.svg">
@@ -6,35 +6,36 @@
     <div role="button" class="add" *ngIf="!isTrash">
         <img class="divImg" src="../../../assets/collaborate.svg">
     </div>
-    <!-- <div role="button" class="add" *ngIf="!isTrash" matTooltip="Background color">
-        <img class="divImg" src="../../../assets/palette_black_24dp.svg">
-        
-    </div> -->
     <div role="button" class="add" *ngIf="!isTrash" matTooltip="Background color" [matMenuTriggerFor]="color">
         <img class="divImg" src="../../../assets/palette_black_24dp.svg">
         <mat-menu #color="matMenu">
             <div fxLayout="row wrap" style="padding-left: 8px;">
                 <div *ngFor="let color of colorsArr" class="colorBox">
                     <button class="colors" mat-icon-button mat-raised-button [style.background]="color?.code"
-                        (click)="setColor(color?.code)"></button> 
+                        (click)="setColor(color?.code)"></button>
                 </div>
             </div>
         </mat-menu>
     </div>
-
-
-
     <div role="button" class="add" *ngIf="!isTrash">
         <img class="divImg" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
     </div>
-    <div role="button" class="add" *ngIf="!isArchive && !isTrash" (click)="onArchiev()">
-        <img class="divImg" src="../../../assets/archive_black_24dp.svg">
+
+    <div class="add" *ngIf=" this.noteCard.isArchived==false">
+        <div mat-icon-button matTooltip="archive" (click)="onArchiev()">
+            <img class="divImg" src="../../../assets/archive_black_24dp.svg">
+        </div>
+    </div>
+    <div class="add" *ngIf=" this.noteCard.isArchived==true">
+        <div mat-icon-button matTooltip="unarchive" (click)="unarchive()">
+            <img class="divImg" src="../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg">
+        </div>
     </div>
     <div role="button" class="add">
 
-        <div class ="MoreItem" *ngIf="!isTrash" mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu">
+        <div class="MoreItem" *ngIf="!isTrash" mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu">
             <img class="divImg" src="../../../assets/more_vert_black_24dp.svg">
-            <mat-menu #menu="matMenu" >
+            <mat-menu #menu="matMenu">
                 <button mat-menu-item (click)="trash()">Delete note</button>
                 <button mat-menu-item>Add Label</button>
                 <button mat-menu-item>Add Drawing</button>
@@ -44,14 +45,15 @@
             </mat-menu>
         </div>
     </div>
-    <div *ngIf="isTrash" fxLayout="row" fxLayourAlign="center">
-        <div  matTooltip="Delete forever">
-            <img class="icons" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48 (1).svg" >
-        </div>
 
-        <div class="buttons"  matTooltip="Restore">
-            <img class="icons" src="../../../assets/Restore.png" (click)="trash()">
-        </div>
-
+</div>
+<div class="trash" *ngIf="this.noteCard.isDeleted==true">
+    <div mat-icon-button matTooltip="archive" (click)="Restorenote()">
+        <img class="restoreImg" src="../../../assets/Restore.png">
+    </div>
+</div>
+<div class="trash" *ngIf=" this.noteCard.isDeleted==true">
+    <div mat-icon-button matTooltip="deleteforever" (click)="Deleteforever()">
+        <img class="TrashImg" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48 (1).svg">
     </div>
 </div>

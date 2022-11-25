@@ -19,8 +19,13 @@ export class ArchieveComponent implements OnInit {
       console.log(response.data.data);
       this.noteArray = response.data.data;
       console.log(this.noteArray);
-      this.noteArray.reverse();
+     
+       this.noteArray.reverse();
+     
     })
   }
-
+  unarchive(data: any) {
+    console.log("refresh", data);
+    this.getArchiveList();
+  }
 }

@@ -17,7 +17,7 @@
 
     <div class="search-box">
       <img class="search-icon" src="../../../assets/search-icon.svg" alt="">
-      <input matInput placeholder="Search" style="width: 600px;">
+      <input matInput placeholder="Search" style="width: 600px;" (keyup)="searchNote($event)">
     </div>
     <div class="right_icons">
       <img class="refresh" src="../../../assets/refresh.svg" alt="">

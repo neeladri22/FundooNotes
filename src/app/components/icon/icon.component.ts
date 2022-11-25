@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteServiceService } from 'src/app/services/noteService/note-service.service';
 
 @Component({
@@ -10,6 +10,12 @@ export class IconComponent implements OnInit {
 
   constructor(private note: NoteServiceService) { }
   @Input() noteCard: any;
+  @Output() trashNoteToRefresh = new EventEmitter<any>();
+  @Output() archiveNoteToRefresh = new EventEmitter<any>();
+  @Output() changeColorOfNote = new EventEmitter<any>();
+  @Output() deleteNoteToRefresh = new EventEmitter<any>();
+  @Output() restoreNoteToRefresh = new EventEmitter<any>();
+  @Output() unarchieveNoteToRefresh = new EventEmitter<any>();
   noteID: any;
   isTrash: boolean = false;
   isArchive: boolean = false;
@@ -40,10 +46,10 @@ export class IconComponent implements OnInit {
     console.log(reqdata);
     this.note.trashNote(reqdata).subscribe((response: any) => {
       console.log("Deleted Successfully", response);
-
+      this.trashNoteToRefresh.emit(response)
     })
   }
-
+ 
   onArchiev() {
    
     let reqdata = {
@@ -53,7 +59,7 @@ export class IconComponent implements OnInit {
     console.log(reqdata);
     this.note.archivedNotes(reqdata).subscribe((response:any)=>{
       console.log("Archieve Successfully", response);
-     
+      this.archiveNoteToRefresh.emit(response)
     });
   }
 
@@ -67,8 +73,44 @@ export class IconComponent implements OnInit {
     console.log(reqdata);
     this.note.getColorNotes(reqdata).subscribe((response:any)=>{
       console.log("Color changed Successfully", response);
-     
+      this.changeColorOfNote.emit(response)
     });
+  }
+
+  unarchive(){
+    let reqdata = {
+      noteIdList: [this.noteCard.id],
+      isArchived: false,
+    }
+    this.note.archivedNotes(reqdata).subscribe((response:any)=>{
+      console.log('note unarchived successfully',response); 
+      this.unarchieveNoteToRefresh.emit(response)
+    })
+
+  }
+  Deleteforever(){
+    let reqdata = {
+      noteIdList: [this.noteCard.id],
+      isDeleted: true
+    }
+    console.log(reqdata);
+    this.note.DeleteforeverNote(reqdata).subscribe((response: any) => {
+      console.log("Deleted from note Successfully", response);
+      this.deleteNoteToRefresh.emit(response)
+    
+    })
+  }
+  Restorenote(){
+    let reqdata = {
+      noteIdList: [this.noteCard.id],
+      isDeleted: false,
+    }
+    console.log(reqdata);
+    this.note.trashNote(reqdata).subscribe((response: any) => {
+      console.log("restore Successfully", response);
+      this.restoreNoteToRefresh.emit(response)
+
+    })
   }
 
 }

@@ -20,12 +20,17 @@ export class TrashComponent implements OnInit {
       this.noteArray = response.data.data;
       console.log(this.noteArray);
       this.noteArray.reverse();
-      //   this.noteArray = this.noteArray.filter((obj: any) => {
-      //   return obj.isTrash === true
-      // })
+       
     })
   }
 
- 
+  delete(data: any) {
+    console.log("refresh", data);
+    this.getTrashList();
+  }
+  restore(data: any) {
+    console.log("refresh", data);
+    this.getTrashList();
+  }
 
 }
