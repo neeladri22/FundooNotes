@@ -10,17 +10,19 @@ import { LoginComponent } from './components/login/login.component';
 import { TrashComponent } from './components/trash/trash.component';
 
 const routes: Routes = [
-  {path : "login",component:LoginComponent},
-  {path:'', redirectTo:"/login",pathMatch:'full'},
-  {path : "dashboard", component:DashboardComponent,canActivate:[AuthenticationGuard],
-   children:[
-         {path: "notes",component:GetAllNotesComponent},
-        
-         {path:"icon",component:IconComponent},
-         {path:"trash",component:TrashComponent},
-         {path:"archieve",component:ArchieveComponent}
- ]}
-  
+  { path: "login", component: LoginComponent },
+  { path: '', redirectTo: "/login", pathMatch: 'full' },
+  {
+    path: "dashboard", component: DashboardComponent, canActivate: [AuthenticationGuard],
+    children: [
+      { path: "notes", component: GetAllNotesComponent },
+
+      { path: "icon", component: IconComponent },
+      { path: "trash", component: TrashComponent },
+      { path: "archieve", component: ArchieveComponent }
+    ]
+  }
+
 
 ];
 

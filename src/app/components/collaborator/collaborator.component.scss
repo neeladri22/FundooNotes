@@ -1,0 +1,77 @@
+::ng-deep mat-dialog-container {
+    border-radius: 10px !important;
+    padding: 0px !important;
+    // overflow: hidden !important;
+  }
+  .collaborator{
+      padding: 25px;
+    }
+    .collab{
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin-left: 5px;
+    }
+   .rows{
+      display: flex;
+      flex-direction: row;
+      margin: 10px;
+    }
+    .CircleIcon{
+      background: transparent;
+      border: none;
+    }
+  
+   .buttons{
+      display:flex;
+      justify-content: flex-end;
+      background-color: rgba(0,0,0,.07);
+      padding: 10px;
+    }
+  
+    .buttons button{
+      margin: 0px 10px 0px 10px;
+      background: transparent;
+      border: none;
+    }
+    .menu{
+      margin: 1px;
+    }
+    .mat-menu-panel {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      max-height: calc(100vh - 48px);
+      border-radius: 4px;
+      outline: 0;
+      min-height: 64px;
+      position: relative;
+    }
+  
+    .remove{
+      background: transparent;
+      border: none;
+    }
+    .person{
+     
+      border: 1px solid gray;
+      border-radius: 50%;
+    }
+    .font{
+      font-size: 20px;
+      text-transform: capitalize;
+      margin: 6px;
+      margin-left: 10px;
+      color: aliceblue;
+      font-weight: bolder;
+    }
+    .name{
+      text-transform: capitalize;
+    }
+    .lg{
+      width: 33px;
+      height: 33px;
+      border-radius: 100%;
+      background-color: #508178;
+      margin-right: 10px;
+      margin-left: 5px;
+    }

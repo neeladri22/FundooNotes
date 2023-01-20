@@ -28,6 +28,7 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
 import { AuthguardServiceService } from './services/AugthGuardService/authguard-service.service';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SearchFilterPipe } from './Pipes/search-filter.pipe';
+import { CollaboratorComponent } from './collaborator/collaborator.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SearchFilterPipe } from './Pipes/search-filter.pipe';
     TrashComponent,
     ArchieveComponent,
     UpdateNoteComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    CollaboratorComponent
     
   ],
   imports: [

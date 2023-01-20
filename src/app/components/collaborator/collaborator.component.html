@@ -1,0 +1,43 @@
+<div class="collaborator">
+    <span class="mat-title">Collaborators</span>
+    <hr />
+    <div class="rows">
+        <button mat-icon-button class="CircleIcon"> <img src="../../../assets/Circle-icons.svg"
+                style="width:30px; height: 30px;"> </button>
+        <div class="collab">
+            <span>{{fname}} {{lname}} <b>(Owner)</b></span>
+            <span>{{email}}</span>
+        </div>
+        <button mat-icon-button style="visibility:hidden;"><img src="../../../assets/Cancel-Search.svg"></button>
+    </div>
+    <div *ngFor="let c of collabs" class="rows">
+        <div class="lg">
+            <div class="font">{{c.firstName[0]}}</div>
+        </div>
+        <div class="collab">
+            <div class="name"><b>{{c.firstName}} </b><b>{{c.lastName}}</b></div>
+            <span>{{c.email}}</span>
+        </div>
+        <button mat-icon-button class="remove" (click)="removeCollab(c.userId)"><img
+                src="../../../assets/Clear Search.svg"></button>
+    </div>
+    <div class="rows">
+        <button mat-icon-button  class="person"> <img src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg"  width="24px" height="24px"  > </button>
+        <div class="collab" style="padding: 10px 0px;">
+            <input matInput placeholder="Person or email to share with" (keyup)="collab($event)" [(ngModel)]="collabEmail"
+                [matMenuTriggerFor]="collablist">
+        </div>
+        <mat-menu #collablist="matMenu" class="menu">
+            <div style="padding-left: 8px;" class="bg">
+                <div class="bg-color" *ngFor="let data of collabList">
+                    <mat-list-item role="listitem" (click)="selectCollab(data)">{{data.email}}</mat-list-item>
+                </div>
+            </div>
+        </mat-menu>
+        <button mat-icon-button (click)="addCollab()" [style]="collabEmail==''? 'opacity:0' : 'opacity: 1'"
+        class="remove"><img src="../../../assets/done_black_24dp.svg"></button>
+    </div>
+    <div class="buttons">
+        <button mat-button (click)="cancel(collabs)">Cancel</button>
+        <button mat-button (click)="save(collabs)">Save</button>
+    </div>
